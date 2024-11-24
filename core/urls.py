@@ -1,6 +1,7 @@
 from django.urls import path
 from core.views import StudentListView
 from core.views import StudentDetailView
+from core.views import StudentClassesView
 from .views import CustomTokenObtainPairView
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
@@ -15,4 +16,5 @@ urlpatterns = [
     # students related apis
     path('api/students/', StudentListView.as_view(), name='student_list'),
     path('api/students/<int:pk>/', StudentDetailView.as_view(), name='student_detail'),
+    path('api/students/classes/', StudentClassesView.as_view(), name='student_classes'),
 ]
