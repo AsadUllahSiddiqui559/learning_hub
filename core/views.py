@@ -3,6 +3,7 @@ from rest_framework.generics import ListAPIView
 from core.models import Student
 from core.serializers import StudentSerializer
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.generics import RetrieveAPIView
 
 from rest_framework_simplejwt.views import TokenObtainPairView
 from .serializers import CustomTokenObtainPairSerializer
@@ -14,5 +15,10 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 class StudentListView(ListAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    permission_classes = [IsAuthenticated] 
+    permission_classes = [IsAuthenticated]
+
+class StudentDetailView(RetrieveAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    permission_classes = [IsAuthenticated]
 
