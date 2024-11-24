@@ -1,0 +1,17 @@
+# Python compiled files
+*.pyc
+__pycache__/
+
+# Virtual environment directories
+env/
+venv/
+
+# IDE settings and cache files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+
+# Temporary files
+*.log
